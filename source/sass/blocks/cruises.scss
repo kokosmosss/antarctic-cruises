@@ -1,0 +1,41 @@
+.cruises {
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 42px;
+    color: $alice-blue;
+
+    @include vp-1023 {
+      font-size: 26px;
+      line-height: 39px;
+    }
+
+    @include vp-767 {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+}
+
+.cruises__text {
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: $alice-blue;
+  }
+
+  dt {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $alice-blue;
+  }
+
+  dd {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $quartz;
+  }
+}

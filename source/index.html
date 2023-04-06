@@ -14,79 +14,80 @@
   <div class="wrapper">
     <header class="header">
       <div class="container">
-        <div class="header__menu">
-          <a class="header__logo logo">
-            <img src="img/svg/logo.svg" width="70" height="38" alt="Логотип компании.">
-          </a>
-          <button class="header__toggle" type="button">
-            <span class="visually-hidden">Открыть/закрыть меню</span>
-          </button>
+        <div class="header__container">
+          <div class="header__menu">
+            <a class="header__logo logo">
+              <img src="img/svg/logo.svg" width="70" height="38" alt="Логотип компании.">
+            </a>
+            <button class="header__toggle" type="button">
+              <span class="visually-hidden">Открыть/закрыть меню</span>
+            </button>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__nav-list nav-list clear-list">
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#features">
+                  Преимущества
+                </a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#">
+                  Направления
+                </a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#cruises">
+                  Ближайшие круизы
+                </a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="#contacts">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav class="header__nav">
-          <ul class="header__nav-list nav-list clear-list">
-            <li class="nav-list__item">
-              <a class="nav-list__link" href="#features">
-                Преимущества
-              </a>
-            </li>
-            <li class="nav-list__item">
-              <a class="nav-list__link" href="#">
-                Направления
-              </a>
-            </li>
-            <li class="nav-list__item">
-              <a class="nav-list__link" href="#cruises">
-                Ближайшие круизы
-              </a>
-            </li>
-            <li class="nav-list__item">
-              <a class="nav-list__link" href="#contacts">
-                Контакты
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </header>
     <main class="main">
       <section class="main__intro intro">
         <div class="container">
-          <picture>
-            <source type="image/webp" media="(max-width: 767px)"
-              srcset="img/bg/intro-mobile.webp 1x, img/bg/intro-mobile@2x.webp 2x">
-            <source type="image/webp" media="(max-width: 1023px)"
-              srcset="img/bg/intro-tablet.webp 1x, img/bg/intro-tablet@2x.webp 2x">
-            <source type="image/webp" srcset="img/bg/intro.webp 1x, img/bg/intro@2x.webp 2x">
-            <source media="(max-width: 767px)" srcset="img/bg/intro-mobile.jpg 1x, img/bg/intro-mobile@2x.jpg 2x">
-            <source media="(max-width: 1023px)" srcset="img/bg/intro-tablet.jpg 1x, img/bg/intro-tablet@2x.jpg 2x">
-            <img src="img/intro.jpg" srcset="img/bg/intro@2x.jpg 2x" width="1366" height="650" alt="">
-          </picture>
+          <div class="intro__image">
+            <picture>
+              <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/bg/intro-mobile.webp 1x, img/bg/intro-mobile@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)"
+                srcset="img/bg/intro-tablet.webp 1x, img/bg/intro-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/bg/intro.webp 1x, img/bg/intro@2x.webp 2x">
+              <source media="(max-width: 767px)" srcset="img/bg/intro-mobile.jpg 1x, img/bg/intro-mobile@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/bg/intro-tablet.jpg 1x, img/bg/intro-tablet@2x.jpg 2x">
+              <img src="img/intro.jpg" srcset="img/bg/intro@2x.jpg 2x" width="1366" height="650" alt="">
+            </picture>
+          </div>
           <div class="intro__text">
-            <h1>Круизы в Антарктику</h1>
+            <h1>Круизы в&nbsp;Антарктику</h1>
             <p>Волшебный мир айсбергов и пингвинов</p>
           </div>
         </div>
       </section>
       <section class="main__about about">
         <div class="container">
-          <div class="about__text">
-            <h2>Путешествие на край Земли</h2>
-            <p>Это волшебное путешествие поможет вам познакомиться поближе с удивительным миром Антарктики. Наш круизный
-              лайнер отвезет
-              вас на край Земли, где вы сможете увидеть: ледяные айсберги, несколько видов пингвинов, китов, морских
-              котиков и многое
-              другое.</p>
+          <div class="about__container">
+            <div class="about__text">
+              <h2>Путешествие на&nbsp;край Земли</h2>
+              <p>Это волшебное путешествие поможет вам познакомиться поближе с&nbsp;удивительным миром Антарктики. Наш
+              круизный лайнер отвезет вас на&nbsp;край Земли, где вы&nbsp;сможете увидеть: ледяные айсберги, несколько видов пингвинов, китов, морских
+              котиков и&nbsp;многое другое.</p>
+            </div>
+            <div class="about__image">
+            <picture>
+              <source type="image/webp" srcset="img/penguins.webp 1x, img/penguins@2x.webp 2x">
+              <img src="img/penguins.png" srcset="img/penguins@2x.png 2x" width="560" height="301"
+                alt="Фотография с пингвинами.">
+            </picture>
+            </div>
           </div>
-          <picture>
-            <source type="image/webp" media="(max-width: 767px)"
-              srcset="./img/penguins-mobile.webp 1x, ./img/penguins-mobile@2x.webp 2x">
-            <source type="image/webp" media="(max-width: 1023px)"
-              srcset="./img/penguins-tablet.webp 1x, ./img/penguins-tablet@2x.webp 2x">
-            <source type="image/webp" srcset="./img/penguins.webp 1x, ./img/penguins@2x.webp 2x">
-            <source media="(max-width: 767px)" srcset="./img/penguins-mobile.png 1x, ./img/penguins-mobile@2x.png 2x">
-            <source media="(max-width: 1023px)" srcset="./img/penguins-tablet.png 1x, ./img/penguins-tablet@2x.png 2x">
-            <img src="./img/penguins.png" srcset="./img/penguins@2x.png 2x" width="560" height="301" alt="">
-          </picture>
         </div>
       </section>
       <section class="main__features features" id="features">
@@ -100,7 +101,7 @@
             <source media="(max-width: 767px)" srcset="img/bg/features-mobile.jpg 1x, img/bg/features-mobile@2x.jpg 2x">
             <source media="(max-width: 1023px)"
               srcset="img/bg/features-tablet.jpg 1x, img/bg/features-tablet@2x.jpg 2x">
-            <img src="img/bg/features-desktop.jpg" srcset="img/bg/features-desktop@2x.jpg 2x" width="1366" height="562"
+            <img src="img/bg/features.jpg" srcset="img/bg/features@2x.jpg 2x" width="1366" height="562"
               aria-hidden="true" alt="" loading="lazy">
           </picture>
           <h2>Преимущества</h2>
@@ -402,13 +403,11 @@
             <form action="https://echo.htmlacademy.ru" method="POST">
               <p>Оставьте заявку и мы свяжемся с вами в ближайшее время</p>
               <div class="form__area-wrapper">
-                <div class="form__area" data-validate-type="text" data-message-base="Обязательное поле"
-                  data-required>
+                <div class="form__area" data-validate-type="text" data-message-base="Обязательное поле" data-required>
                   <input type="text" id="name" name="name" placeholder="Имя" required>
                   <label class="visually-hidden" for="name">Имя</label>
                 </div>
-                <div class="form__area" data-validate-type="phone" data-message-base="Обязательное поле"
-                  data-required>
+                <div class="form__area" data-validate-type="phone" data-message-base="Обязательное поле" data-required>
                   <input type="tel" id="tel" name="tel" placeholder="Телефон" required>
                   <label class="visually-hidden" for="tel">Телефон</label>
                 </div>
@@ -416,8 +415,8 @@
                   <input type="email" id="email" name="email" placeholder="Телефон" required>
                   <label class="visually-hidden" for="email">Email</label>
                 </div>
-                <div class="form__data-area" data-validate-type="checkbox"
-                  data-message-base="Обязательное поле" data-required>
+                <div class="form__data-area" data-validate-type="checkbox" data-message-base="Обязательное поле"
+                  data-required>
                   <input type="checkbox" id="personal-data" name="personal-data" required checked>
                   <label for="personal-data">
                     Я согласен на обработку моих персональных данных
@@ -432,11 +431,11 @@
       <section class="main__contacts contacts" id="contacts">
         <div class="container">
           <h2 class="visually-hidden">Наши контакты.</h2>
-          <iframe
+          <!-- <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253002837!2d30.32085871572711!3d59.93871916905462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1680775466652!5m2!1sru!2sru"
             width="560" height="306" allowfullscreen="" loading="lazy"
-            title="Офис компании по адресу г. Санкт Петербург, ул. Большая Конюшенная, 19/8"></iframe>
-            
+            title="Офис компании по адресу г. Санкт Петербург, ул. Большая Конюшенная, 19/8"></iframe> -->
+
           <div class="contacts__text">
             <p>У&nbsp;вас ещё остались вопросы или сомнения? Приезжайте к&nbsp;нам в&nbsp;офис и&nbsp;мы&nbsp;вам все
               расскажем.</p>

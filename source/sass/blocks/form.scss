@@ -1,0 +1,40 @@
+.form {
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: $alice-blue;
+
+    @include vp-767 {
+      line-height: 26px;
+      text-align: center;
+    }
+  }
+}
+
+.form__area {
+  input {
+    font-family: $montserrat;
+    font-size: 14px;
+    line-height: 21px;
+    color: $tangaroa;
+  }
+
+  input::placeholder {
+    font-family: inherit;
+    color: rgba(1, 28, 64, 0.7);
+  }
+}
+
+.form__data-area {
+  label {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13px;
+    color: $alice-blue;
+
+    @include vp-767 {
+      line-height: 12px;
+    }
+  }
+}

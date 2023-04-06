@@ -1,0 +1,83 @@
+.intro {
+  position: relative;
+}
+
+.intro__text {
+  padding: 162px 95px 265px;
+
+  @include vp-1023 {
+    padding: 187px 0 258px;
+  }
+
+  @include vp-767 {
+    padding: 108px 0 125px;
+  }
+
+  h1 {
+    margin: 0 0 12px;
+
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 66px;
+    color: $alice-blue;
+
+    @include vp-1023 {
+      font-size: 50px;
+      line-height: 61px;
+    }
+
+    @include vp-767 {
+      font-size: 36px;
+      line-height: 45px;
+    }
+  }
+
+  p {
+    margin: 0 0 12px;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    color: $alice-blue;
+
+
+    @include vp-1023 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      padding-right: 60px;
+      
+      font-size: 16px;
+      line-height: 23px;
+    }
+  }
+}
+
+.intro__image {
+  position: absolute;
+  top: -108px;
+  left: 0;
+  height: 100%;
+  min-height: 660px;
+  width: 100%;
+  z-index: -1;
+  background-color: $lochmara;
+
+  @include vp-1023 {
+    top: -100px;
+    min-height: 658px;
+  }
+
+    @include vp-767 {
+      min-height: 532px;
+    }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 100%;
+  }
+}
