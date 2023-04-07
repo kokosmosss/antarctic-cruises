@@ -1,0 +1,19 @@
+.button {
+  display: inline-flex;
+  padding: 14px 20px 15px;
+  justify-content: center;
+
+  font-family: $montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: $tangaroa;
+  background-color: $alice-blue;
+
+  border: none;
+  cursor: pointer;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}

@@ -1,9 +1,11 @@
 .cruises {
   h2 {
+    margin: 0 0 50px;
+
     font-size: 28px;
     font-weight: 600;
     line-height: 42px;
-    color: $alice-blue;
+    text-align: center;
 
     @include vp-1023 {
       font-size: 26px;
@@ -11,6 +13,8 @@
     }
 
     @include vp-767 {
+      margin: 0 0 30px;
+
       font-size: 24px;
       line-height: 36px;
     }
@@ -18,14 +22,44 @@
 }
 
 .cruises__text {
+  display: flex;
+  flex-direction: column;
+  height: 386px;
+  margin-top: 308px;
+  padding: 28px 25px 35px;
+  background-color: transparent;
+
   h3 {
+    margin: 0 0 30px;
+
     font-size: 18px;
     font-weight: 500;
     line-height: 27px;
     color: $alice-blue;
+
+    @include vp-1023 {
+      margin: -5px 0 30px 11px;
+    }
+
+    @include vp-767 {
+      margin: 6px 0 16px 0;
+    }
+  }
+
+  dl {
+    margin: 15px 0 17px;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    /* stylelint-disable-next-line */
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   dt {
+    margin: 0;
+
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
@@ -33,9 +67,64 @@
   }
 
   dd {
+    margin: 0 0 12px;
+
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
     color: $quartz;
   }
+}
+
+.cruises__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0 15px;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+}
+
+.cruises__item {
+  position: relative;
+  height: 386px;
+  box-shadow: 0 4px 35px rgba(1, 28, 64, 0.15);
+  overflow: hidden;
+
+  &:hover {
+    .cruises__text {
+      margin-top: 0;
+      background-color: $tangaroa;
+
+      h3 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.cruises__image {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: $lochmara;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.cruises__button {
+  margin-top: 10px;
 }

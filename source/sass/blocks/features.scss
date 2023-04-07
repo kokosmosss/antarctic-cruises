@@ -1,8 +1,22 @@
 .features {
+  position: relative;
+  padding: 107px 0 120px;
+
+  @include vp-1023 {
+    padding: 89px 0 100px;
+  }
+
+  @include vp-767 {
+    padding: 58px 0 65px;
+  }
+
   h2 {
+    margin: 0 0 50px;
+
     font-size: 28px;
     font-weight: 600;
     line-height: 42px;
+    text-align: center;
 
     @include vp-1023 {
       font-size: 26px;
@@ -10,24 +24,104 @@
     }
 
     @include vp-767 {
+      margin: 0 0 30px;
+
       font-size: 24px;
       line-height: 36px;
     }
   }
 
   h3 {
+    margin: 11px 0 8px;
+
     font-size: 18px;
     font-weight: 500;
     line-height: 27px;
 
     @include vp-1023 {
+      margin: 9px 0 7px;
       line-height: 26px;
+    }
+
+    @include vp-767 {
+      margin: 7px 58px 8px 0;
     }
   }
 
   p {
+    margin: 0;
+
     font-size: 14px;
     line-height: 20px;
   }
 }
 
+.features__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: 562px;
+  width: 100%;
+  z-index: -1;
+  background-color: $lochmara;
+
+  @include vp-1023 {
+    min-height: 588px;
+  }
+
+  @include vp-767 {
+    min-height: 997px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.features__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  @include vp-1023 {
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features__item {
+  padding: 30px 35px 45px 30px;
+  background-color: $alice-blue;
+
+  @include vp-1023 {
+    padding: 23px 15px 20px 20px;
+  }
+
+  @include vp-767 {
+    padding: 25px 15px 19px 20px;
+  }
+}
+
+.features__icon--ship-front {
+  @include vp-1023 {
+    width: 21px;
+  }
+}
+
+.features__icon--tick {
+  @include vp-1023 {
+    width: 27px;
+  }
+}
+
+.features__icon--ship-side {
+  @include vp-1023 {
+    width: 37px;
+  }
+}
