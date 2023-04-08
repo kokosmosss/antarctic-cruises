@@ -1,6 +1,10 @@
 .form {
-  padding: 44px 50px 46px;
+  padding: 44px 50px 53px;
   background-color: $tangaroa;
+
+  @include vp-767 {
+    padding: 35px 28px 38px;
+  }
 
   p {
     margin: 0 0 27px;
@@ -15,9 +19,20 @@
       text-align: center;
     }
   }
+
+  .input-message {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    margin: 0;
+    font-size: 12px;
+    color: $red;
+  }
 }
 
 .form__area {
+  position: relative;
+
   input {
     width: 100%;
     padding: 11px 16px;
@@ -28,6 +43,11 @@
     line-height: 21px;
     color: $tangaroa;
     background-color: $alice-blue;
+
+    @include hover-focus {
+      opacity: 0.8;
+      outline-color: $pale-cornflower-blue;
+    }
   }
 
   input::placeholder {
@@ -44,13 +64,11 @@
   align-items: center;
   margin: 4px 0 30px;
 
-  // @include vp-1023 {
-  //   margin: 14px 0 0 0;
-  // }
-
-  // @include vp-767 {
-  //   margin: -2px 0 0 5px;
-  // }
+  @include vp-767 {
+    grid-template-columns: 20px 1fr;
+    gap: 10px;
+    margin: 1px 0 27px;
+  }
 
   input {
     appearance: none;
@@ -60,22 +78,27 @@
     background-color: $alice-blue;
     cursor: pointer;
 
+    @include vp-767 {
+      width: 20px;
+      height: 20px;
+    }
+
     // @include hover-focus {
 
     // }
   }
 
-    label {
-      font-size: 10px;
-      font-weight: 400;
-      line-height: 13px;
-      color: $alice-blue;
-      cursor: pointer;
+  label {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13px;
+    color: $alice-blue;
+    cursor: pointer;
 
-      @include vp-767 {
-        line-height: 12px;
-      }
+    @include vp-767 {
+      line-height: 12px;
     }
+  }
 
   input:checked {
     &::after {
@@ -88,10 +111,18 @@
       border-left: 1px solid $sapphire;
       border-bottom: 1px solid $sapphire;
       transform: rotate(-50deg);
+
+      @include vp-767 {
+        left: 8px;
+        top: calc(50% - 5px);
+        width: 9px;
+        height: 6px;
+      }
     }
   }
 }
 
 .form__button {
   width: 100%;
+  padding: 11px 20px;
 }

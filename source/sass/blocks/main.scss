@@ -1,8 +1,12 @@
 .main__intro {
-  margin-bottom: 110px;
+  margin-bottom: 103px;
 
   @include vp-1023 {
-    margin-bottom: 96px;
+    margin-bottom: 90px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 58px;
   }
 }
 
@@ -43,6 +47,18 @@
 }
 
 .main__callback {
+  margin-bottom: 120px;
+
+  @include vp-1023 {
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 65px;
+  }
+}
+
+.main__contacts {
   margin-bottom: 120px;
 
   @include vp-1023 {

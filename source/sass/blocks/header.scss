@@ -1,4 +1,6 @@
 .header {
+  position: absolute;
+  width: 100%;
   padding: 35px 0;
 
   @include vp-1023 {
@@ -22,5 +24,103 @@
 
   @include vp-767 {
     display: block;
+    width: 24px;
+    height: 14px;
+    padding: 0;
+    margin-left: auto;
+    background-color: inherit;
+    cursor: pointer;
+    border: none;
+    justify-self: end;
+    align-self: end;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 24px;
+      height: 2px;
+      background-color: $alice-blue;
+      box-shadow: 0 6px 0 0 $alice-blue, 0 12px 0 0 $alice-blue;
+      transition-property: box-shadow;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-out;
+    }
+  }
+}
+
+.header__toggle-wrapper {
+  display: none;
+
+  @include vp-767 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: end;
+    max-width: 100px;
+  }
+}
+
+.header__menu {
+  @include vp-767 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+
+.header__toggle--close {
+  @include vp-767 {
+    top: 0;
+    left: 0;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 12px;
+      width: 13px;
+      height: 2px;
+      background-color: $tangaroa;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.header__logo {
+  @include vp-767 {
+    margin-right: 20px;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  img {
+    @include vp-1023 {
+      width: 38px;
+      height: 20px;
+    }
+  }
+}
+
+.header__nav {
+  max-width: 700px;
+  
+  @include vp-1023 {
+    max-width: 600px;
   }
 }
