@@ -437,6 +437,7 @@ html {
   line-height: 24px;
   font-family: "Montserrat", "Arial", sans-serif;
   color: #011c40;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -658,6 +659,10 @@ button,
   background-color: #f9fbfd;
   border: none;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .button.focus-visible:focus {
@@ -682,6 +687,19 @@ button,
   align-items: center;
 }
 
+.is-open .header__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  padding: 22px 0 0 15px;
+  min-width: 283px;
+  width: 78%;
+  height: 100%;
+  background-color: #f9fbfd;
+  color: #011c40;
+}
+
 .header__toggle {
   display: none;
 }
@@ -704,13 +722,24 @@ button,
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 33px;
+}
+
+.header .nav-list {
+  gap: 37px;
+}
+
+.footer .nav-list {
+  gap: 35px;
 }
 
 .nav-list__link {
   font-weight: 500;
   line-height: 20px;
   color: #f9fbfd;
+}
+
+.nav-list__link.focus-visible:focus {
+  opacity: 0.8;
 }
 
 .intro {
@@ -791,35 +820,16 @@ button,
   text-align: center;
 }
 
-.features h3 {
-  margin: 11px 0 8px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
-}
-
-.features p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.features__image {
+.features img {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  min-height: 562px;
-  width: 100%;
-  z-index: -1;
-  background-color: #386ba7;
-}
-
-.features__image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  z-index: -1;
+  background-color: #386ba7;
 }
 
 .features__list {
@@ -833,6 +843,19 @@ button,
 .features__item {
   padding: 30px 35px 45px 30px;
   background-color: #f9fbfd;
+}
+
+.features__item h3 {
+  margin: 11px 0 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.features__item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .callback {
@@ -972,6 +995,10 @@ button,
   cursor: pointer;
 }
 
+.form__data-area input.focus-visible:focus {
+  opacity: 0.8;
+}
+
 .form__data-area label {
   font-size: 10px;
   font-weight: 400;
@@ -1044,7 +1071,7 @@ button,
 }
 
 .main__about {
-  margin-bottom: 140px;
+  margin-bottom: 127px;
 }
 
 .main__features {
@@ -1080,20 +1107,12 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   height: 386px;
-  margin-top: 308px;
-  padding: 28px 25px 35px;
+  padding: 28px 27px 21px;
   background-color: transparent;
 }
 
-.cruises__text h3 {
-  margin: 0 0 30px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
-  color: #f9fbfd;
-}
-
 .cruises__text dl {
+  display: none;
   margin: 15px 0 17px;
   overflow: scroll;
   scrollbar-width: none;
@@ -1131,17 +1150,58 @@ button,
 
 .cruises__item {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 386px;
   overflow: hidden;
 }
 
-.cruises__item:hover .cruises__text {
-  margin-top: 0;
-  background-color: #011c40;
+.cruises__item:hover,
+.cruises__item:focus,
+.cruises__item:focus-within {
+  -webkit-box-shadow: 0px 4px 35px 0px rgba(1, 28, 64, 0.15);
+  box-shadow: 0px 4px 35px 0px rgba(1, 28, 64, 0.15);
 }
 
-.cruises__item:hover .cruises__text h3 {
+.cruises__item:hover .cruises__text,
+.cruises__item:focus .cruises__text,
+.cruises__item:focus-within .cruises__text {
+  height: 100%;
+  background-color: #011c40;
+  padding: 28px 25px 35px;
+}
+
+.cruises__item:hover .cruises__text h3,
+.cruises__item:focus .cruises__text h3,
+.cruises__item:focus-within .cruises__text h3 {
   margin: 0;
+}
+
+.cruises__item:hover .cruises__text dl,
+.cruises__item:focus .cruises__text dl,
+.cruises__item:focus-within .cruises__text dl {
+  display: block;
+}
+
+.cruises__item:hover .cruises__text .cruises__button,
+.cruises__item:focus .cruises__text .cruises__button,
+.cruises__item:focus-within .cruises__text .cruises__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cruises__item h3 {
+  margin: auto 0 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #f9fbfd;
 }
 
 .cruises__image {
@@ -1155,11 +1215,13 @@ button,
 
 .cruises__image img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .cruises__button {
+  display: none;
   margin-top: 10px;
+  padding: 10px 20px 11px;
 }
 
 .footer {
@@ -1265,6 +1327,10 @@ button,
     max-width: 600px;
   }
 
+  .header .nav-list {
+    gap: 26px;
+  }
+
   .footer .nav-list {
     gap: 22px;
   }
@@ -1317,21 +1383,17 @@ button,
     line-height: 39px;
   }
 
-  .features h3 {
-    margin: 9px 0 7px;
-    line-height: 26px;
-  }
-
-  .features__image {
-    min-height: 588px;
-  }
-
   .features__list {
     gap: 30px;
   }
 
   .features__item {
     padding: 23px 15px 20px 20px;
+  }
+
+  .features__item h3 {
+    margin: 9px 0 7px;
+    line-height: 26px;
   }
 
   .features__icon--ship-front {
@@ -1398,7 +1460,7 @@ button,
   }
 
   .main__about {
-    margin-bottom: 95px;
+    margin-bottom: 85px;
   }
 
   .main__features {
@@ -1422,13 +1484,43 @@ button,
     line-height: 39px;
   }
 
-  .cruises__text h3 {
-    margin: -5px 0 30px 11px;
+  .cruises__text {
+    padding: 28px 35px 28px;
+    height: auto;
+    margin-top: auto;
   }
 
   .cruises__list {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cruises__item {
+    aspect-ratio: 1/1.25;
+    min-height: 386px;
+    height: auto;
+  }
+
+  .cruises__item:hover .cruises__text,
+  .cruises__item:focus .cruises__text,
+  .cruises__item:focus-within .cruises__text {
+    padding: 28px 35px 35px;
+  }
+
+  .cruises__item:hover .cruises__text dl,
+  .cruises__item:focus .cruises__text dl,
+  .cruises__item:focus-within .cruises__text dl {
+    height: auto;
+  }
+
+  .cruises__item:hover .cruises__text .cruises__button,
+  .cruises__item:focus .cruises__text .cruises__button,
+  .cruises__item:focus-within .cruises__text .cruises__button {
+    margin-top: auto;
+  }
+
+  .cruises__image img {
+    height: auto;
   }
 
   .footer {
@@ -1470,11 +1562,24 @@ button,
   }
 
   .header {
-    padding: 21px 0;
+    padding: 15px 0;
+  }
+
+  .header.is-open::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 43, 102, 0.5);
   }
 
   .header__toggle {
     display: block;
+    position: relative;
     width: 24px;
     height: 14px;
     padding: 0;
@@ -1487,30 +1592,48 @@ button,
     -ms-flex-item-align: end;
     -ms-grid-row-align: end;
     align-self: end;
-    position: relative;
   }
 
   .header__toggle::before {
     content: "";
     position: absolute;
-    top: -5px;
+    top: 0;
     left: 0;
     width: 24px;
     height: 2px;
     background-color: #f9fbfd;
     -webkit-box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
     box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
-    -webkit-transition-property: -webkit-box-shadow;
-    transition-property: -webkit-box-shadow;
-    -o-transition-property: box-shadow;
-    transition-property: box-shadow;
-    transition-property: box-shadow, -webkit-box-shadow;
-    -webkit-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease-out;
-    -o-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
+  }
+
+  .is-open .header__toggle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .is-open .header__toggle::before,
+  .is-open .header__toggle::after {
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background-color: #011c40;
+  }
+
+  .is-open .header__toggle::before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .is-open .header__toggle::after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
   }
 
   .header__toggle-wrapper {
@@ -1526,50 +1649,33 @@ button,
     max-width: 100px;
   }
 
-  .header__menu {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+  .header__logo {
+    margin: 8px 20px 0 0;
+    z-index: 5;
   }
 
-  .header__toggle--close {
-    top: 0;
-    left: 0;
+  .header__logo img {
+    width: 42px;
+    height: 22px;
   }
 
-  .header__toggle--close::before,
-  .header__toggle--close::after {
-    content: "";
+  .is-open .header__logo img {
+    -webkit-filter: brightness(0.15) saturate(100) hue-rotate(10deg);
+    filter: brightness(0.15) saturate(100) hue-rotate(10deg);
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .is-open .header__nav {
     position: absolute;
     top: 0;
-    left: 12px;
-    width: 13px;
-    height: 2px;
-    background-color: #011c40;
-  }
-
-  .header__toggle--close::before {
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
-  .header__toggle--close::after {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
-
-  .header__logo {
-    margin-right: 20px;
+    right: 0;
+    display: block;
+    min-width: 283px;
+    width: 100%;
+    height: 100%;
   }
 
   .footer .nav-list {
@@ -1580,7 +1686,27 @@ button,
     gap: 8px;
   }
 
-  .header .nav-list {
+  .is-open .nav-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    gap: 26px;
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    padding: 85px 15px 20px 23px;
+    pointer-events: all;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    color: #011c40;
+    background-color: #f9fbfd;
+    /* stylelint-disable-next-line */
+  }
+
+  .is-open .nav-list::-webkit-scrollbar {
     display: none;
   }
 
@@ -1614,7 +1740,7 @@ button,
   .about__container {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    gap: 44px;
+    gap: 34px;
   }
 
   .about__image {
@@ -1631,14 +1757,6 @@ button,
     line-height: 36px;
   }
 
-  .features h3 {
-    margin: 7px 58px 8px 0;
-  }
-
-  .features__image {
-    min-height: 997px;
-  }
-
   .features__list {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -1646,6 +1764,10 @@ button,
 
   .features__item {
     padding: 25px 15px 19px 20px;
+  }
+
+  .features__item h3 {
+    margin: 7px 58px 8px 0;
   }
 
   .callback {
@@ -1694,7 +1816,7 @@ button,
   }
 
   .form__data-area input:checked::after {
-    left: 8px;
+    left: 5px;
     top: calc(50% - 5px);
     width: 9px;
     height: 6px;
@@ -1726,10 +1848,6 @@ button,
     margin-bottom: 58px;
   }
 
-  .main__about {
-    margin-bottom: 85px;
-  }
-
   .main__features {
     margin-bottom: 57px;
   }
@@ -1752,14 +1870,24 @@ button,
     line-height: 36px;
   }
 
-  .cruises__text h3 {
-    margin: 6px 0 16px 0;
+  .cruises__text {
+    padding: 28px 25px 18px;
   }
 
   .cruises__list {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     padding: 0 10px;
+  }
+
+  .cruises__item {
+    aspect-ratio: 1/1.42;
+  }
+
+  .cruises__item:hover .cruises__text,
+  .cruises__item:focus .cruises__text,
+  .cruises__item:focus-within .cruises__text {
+    padding: 28px 25px 35px;
   }
 
   .footer {
@@ -1807,9 +1935,17 @@ button,
     opacity: 0.8;
   }
 
+  .nav-list__link:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
   .form__area input:hover:not(.focus-visible) {
     opacity: 0.8;
     outline-color: #abd4fa;
+  }
+
+  .form__data-area input:hover:not(.focus-visible) {
+    opacity: 0.8;
   }
 
   .footer__logo:hover:not(.focus-visible) {

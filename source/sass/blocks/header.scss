@@ -8,15 +8,41 @@
   }
 
   @include vp-767 {
-    padding: 21px 0;
-  }
+    padding: 15px 0;
 
+    &.is-open {
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 43, 102, 0.5);
+      }
+    }
+  }
 }
 
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .is-open & {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    padding: 22px 0 0 15px;
+    min-width: 283px;
+    width: 78%;
+    height: 100%;
+    background-color: $alice-blue;
+    color: $tangaroa;
+  }
 }
 
 .header__toggle {
@@ -24,6 +50,7 @@
 
   @include vp-767 {
     display: block;
+    position: relative;
     width: 24px;
     height: 14px;
     padding: 0;
@@ -33,20 +60,41 @@
     border: none;
     justify-self: end;
     align-self: end;
-    position: relative;
 
     &::before {
       content: "";
       position: absolute;
-      top: -5px;
+      top: 0;
       left: 0;
       width: 24px;
       height: 2px;
       background-color: $alice-blue;
       box-shadow: 0 6px 0 0 $alice-blue, 0 12px 0 0 $alice-blue;
-      transition-property: box-shadow;
-      transition-duration: 0.3s;
-      transition-timing-function: ease-out;
+    }
+
+    .is-open & {
+      width: 30px;
+      height: 30px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 19px;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background-color: $tangaroa;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+        box-shadow: none;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
     }
   }
 }
@@ -63,46 +111,10 @@
   }
 }
 
-.header__menu {
-  @include vp-767 {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-
-
-.header__toggle--close {
-  @include vp-767 {
-    top: 0;
-    left: 0;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 12px;
-      width: 13px;
-      height: 2px;
-      background-color: $tangaroa;
-    }
-
-    &::before {
-      transform: rotate(45deg);
-      box-shadow: none;
-    }
-
-    &::after {
-      transform: rotate(-45deg);
-    }
-  }
-}
-
 .header__logo {
   @include vp-767 {
-    margin-right: 20px;
+    margin: 8px 20px 0 0;
+    z-index: 5;
   }
 
   @include hover-focus {
@@ -114,13 +126,38 @@
       width: 38px;
       height: 20px;
     }
+
+    @include vp-767 {
+      width: 42px;
+      height: 22px;
+    }
+
+    .is-open & {
+      @include vp-767 {
+        filter: brightness(0.15) saturate(100) hue-rotate(10deg);
+      }
+    }
   }
 }
 
 .header__nav {
   max-width: 700px;
-  
+
   @include vp-1023 {
     max-width: 600px;
+  }
+
+  @include vp-767 {
+    display: none;
+
+    .is-open & {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      min-width: 283px;
+      width: 100%;
+      height: 100%;
+    }
   }
 }

@@ -25,28 +25,21 @@
   display: flex;
   flex-direction: column;
   height: 386px;
-  margin-top: 308px;
-  padding: 28px 25px 35px;
+  padding: 28px 27px 21px;
   background-color: transparent;
 
-  h3 {
-    margin: 0 0 30px;
+  @include vp-1023 {
+    padding: 28px 35px 28px;
+    height: auto;
+    margin-top: auto;
+  }
 
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 27px;
-    color: $alice-blue;
-
-    @include vp-1023 {
-      margin: -5px 0 30px 11px;
-    }
-
-    @include vp-767 {
-      margin: 6px 0 16px 0;
-    }
+  @include vp-767 {
+    padding: 28px 25px 18px;
   }
 
   dl {
+    display: none;
     margin: 15px 0 17px;
     overflow: scroll;
     scrollbar-width: none;
@@ -94,20 +87,71 @@
 
 .cruises__item {
   position: relative;
+  display: flex;
+  flex-direction: column;
   height: 386px;
   overflow: hidden;
 
-  &:hover {
+  @include vp-1023 {
+    aspect-ratio: 1 / 1.25;
+    min-height: 386px;
+    height: auto;
+  }
+
+  @include vp-767 {
+    aspect-ratio: 1 / 1.42;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    box-shadow: 0px 4px 35px 0px rgba(1, 28, 64, 0.15);
+
     .cruises__text {
-      margin-top: 0;
+      height: 100%;
       background-color: $tangaroa;
+      padding: 28px 25px 35px;
+
+      @include vp-1023 {
+        padding: 28px 35px 35px;
+      }
+
+      @include vp-767 {
+        padding: 28px 25px 35px;
+      }
 
       h3 {
         margin: 0;
       }
+
+      dl {
+        display: block;
+
+        @include vp-1023 {
+          height: auto;
+        }
+      }
+
+      .cruises__button {
+        display: flex;
+
+        @include vp-1023 {
+          margin-top: auto;
+        }
+      }
     }
   }
+
+  h3 {
+    margin: auto 0 0;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: $alice-blue;
+  }
 }
+
 
 .cruises__image {
   position: absolute;
@@ -119,10 +163,16 @@
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
+
+    @include vp-1023 {
+      height: auto;
+    }
   }
 }
 
 .cruises__button {
+  display: none;
   margin-top: 10px;
+  padding: 10px 20px 11px;
 }
