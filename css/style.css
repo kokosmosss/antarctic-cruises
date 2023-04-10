@@ -997,6 +997,11 @@ button,
 
 .form__data-area input.focus-visible:focus {
   opacity: 0.8;
+  outline-color: #abd4fa;
+}
+
+.form__data-area input.focus-visible:focus {
+  opacity: 0.8;
 }
 
 .form__data-area label {
@@ -1164,8 +1169,8 @@ button,
 .cruises__item:hover,
 .cruises__item:focus,
 .cruises__item:focus-within {
-  -webkit-box-shadow: 0px 4px 35px 0px rgba(1, 28, 64, 0.15);
-  box-shadow: 0px 4px 35px 0px rgba(1, 28, 64, 0.15);
+  -webkit-box-shadow: 0 4px 35px 0 rgba(1, 28, 64, 0.15);
+  box-shadow: 0 4px 35px 0 rgba(1, 28, 64, 0.15);
 }
 
 .cruises__item:hover .cruises__text,
@@ -1940,6 +1945,11 @@ button,
   }
 
   .form__area input:hover:not(.focus-visible) {
+    opacity: 0.8;
+    outline-color: #abd4fa;
+  }
+
+  .form__data-area input:hover:not(.focus-visible) {
     opacity: 0.8;
     outline-color: #abd4fa;
   }
