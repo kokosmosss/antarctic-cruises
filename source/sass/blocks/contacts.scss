@@ -68,6 +68,16 @@
   }
 }
 
+.contact__tel {
+  font-style: normal;
+  color: $tangaroa;
+  margin-right: auto;
+
+  @include vp-767 {
+    margin-right: 0;
+  }
+}
+
 .contacts__group {
   display: grid;
   grid-template-columns: 18px 1fr;

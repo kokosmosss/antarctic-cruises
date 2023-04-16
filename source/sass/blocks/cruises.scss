@@ -89,8 +89,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 386px;
   overflow: hidden;
+  aspect-ratio: 1 / 1.48;
 
   @include vp-1023 {
     aspect-ratio: 1 / 1.25;
